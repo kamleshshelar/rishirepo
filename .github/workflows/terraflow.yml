@@ -1,5 +1,5 @@
 name: Terraform Apply
-on: []
+on: [workflow_dispatch]
 
 jobs:
   terraform_apply:
