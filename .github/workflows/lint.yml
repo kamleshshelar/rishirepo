@@ -1,6 +1,6 @@
 name: lint
 
-on: [workflow_disabled]
+on: [workflow_dispatch]
 jobs:
   checks:
     runs-on: ubuntu-latest
