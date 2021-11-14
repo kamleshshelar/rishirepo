@@ -3,15 +3,6 @@ on: [workflow_dispatch]
 
 
 jobs:
-  lint:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v1
-  - name: Super-Linter
-  - uses: github/super-linter@v4.8.3
-    env: 
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
   terraform_apply:
     runs-on: ubuntu-latest
     steps:
@@ -42,3 +33,6 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform apply -auto-approve -input=false
+      
+    - name: Super-Linter
+      uses: github/super-linter@v4.8.3
