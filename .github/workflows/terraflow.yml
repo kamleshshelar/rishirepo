@@ -1,7 +1,8 @@
 name: Terraform Apply
-on: [workflow_dispatch]
-
-
+on: 
+  [workflow_dispatch]
+    branches:
+      - main
 jobs:
   terraform_apply:
     runs-on: ubuntu-latest
